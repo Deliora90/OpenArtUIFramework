@@ -1,0 +1,171 @@
+@import '@styles/abstracts/_mixins.scss';
+
+.oa-button {
+  height: 40px;
+  width: max-content;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  padding: 9px 30px 7px;
+
+  background: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #888888;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  @include font(sans-serif, 16px, 700, 24px, normal);
+
+  & > .oa-button__text {
+    @include gradient-text;
+  }
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.oa-button_loading {
+    background: #f0f0f0;
+  }
+  &:disabled:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    border-radius: 8px;
+    margin: -1px;
+    opacity: 0.5;
+    background: #fff;
+    z-index: 2;
+  }
+}
+
+.oa-button_loading {
+  background: #f0f0f0;
+  & > .oa-button__text {
+    position: absolute;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.15s ease, visibility 0.15s ease;
+  }
+}
+
+.oa-button_primary {
+  @include gradient-background;
+  border: none;
+
+  &:after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background: #dcdcdc;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  & > .oa-button__text {
+    background: #ffffff;
+    -webkit-background-clip: text;
+  }
+  &:hover,
+  &:focus,
+  &:active,
+  &.oa-button_loading {
+    @include gradient-background;
+  }
+  &:hover:after,
+  &:focus::after,
+  &:active:after {
+    transform: scale(1.07, 1.25);
+    opacity: 0.5;
+  }
+}
+
+.oa-button_secondary {
+  background: #ffffff;
+  background-clip: padding-box;
+  border: solid 1px transparent;
+
+  & > .oa-button__text {
+    color: #ffffff;
+  }
+  &:after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    margin: -1px;
+    border-radius: inherit;
+    z-index: -1;
+    @include gradient-background;
+  }
+  &:hover,
+  &:focus,
+  &:active,
+  &.oa-button_loading {
+    background-clip: padding-box;
+  }
+}
+
+.oa-button_subtle {
+  background: #ffffff;
+  border: 1px solid #888888;
+
+  & > .oa-button__text {
+    @include gradient-text;
+  }
+}
+
+.oa-button_text {
+  border: none;
+  & > .oa-button__text {
+    @include gradient-text;
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    background: #f8f8f8;
+  }
+}
+
+.oa-button__text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  z-index: 1;
+}
+
+.oa-button__loading {
+  transition: opacity 0.25s ease;
+  z-index: 1;
+
+  &-entering {
+    opacity: 0;
+  }
+  &-entered {
+    opacity: 1;
+  }
+  &-exiting {
+    opacity: 0;
+  }
+}

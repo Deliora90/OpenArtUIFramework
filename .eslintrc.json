@@ -1,0 +1,32 @@
+{
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": 2020,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "settings": {
+        "react": {
+            "varsion": "detect"
+        }
+    },
+    "rules": {
+        "jsx-quotes": [
+            1,
+            "prefer-double"
+        ],
+        "@typescript-eslint/no-var-requires": 0
+    }
+}

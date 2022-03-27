@@ -1,0 +1,38 @@
+@mixin font(
+  $font-family,
+  $font-size,
+  $font-weight,
+  $line-height,
+  $font-style,
+  $color: null
+) {
+  @if $font-family {
+    font-family: $font-family;
+  }
+  @if $font-weight {
+    font-weight: $font-weight;
+  }
+  @if $line-height {
+    line-height: $line-height;
+  }
+  @if $font-size {
+    font-size: $font-size;
+  }
+  @if $font-style {
+    font-style: $font-style;
+  }
+  @if $color {
+    color: $color;
+  }
+}
+
+@mixin gradient-text {
+  background: linear-gradient(114.44deg, #0038f5 0%, #9f03ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@mixin gradient-background {
+  background: linear-gradient(114.44deg, #0038f5 0%, #9f03ff 100%);
+}
