@@ -12,6 +12,7 @@ export type GeneralButtonProps = {
   loading?: boolean;
   style?: CSSProperties;
   type?: ButtonType;
+  isLarge?: boolean;
 };
 
 export type ButtonProps = GeneralButtonProps & ButtonEvents;

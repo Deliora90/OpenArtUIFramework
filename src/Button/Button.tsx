@@ -11,6 +11,7 @@ const Button: FC<ButtonProps> = ({
   children,
   className,
   disabled,
+  isLarge,
   loading,
   style,
   type,
@@ -22,6 +23,7 @@ const Button: FC<ButtonProps> = ({
     <button
       className={classes(
         'oa-button',
+        { 'oa-button_large': isLarge },
         { 'oa-button_loading': loading },
         { 'oa-button_primary': type === 'primary' },
         { 'oa-button_secondary': type === 'secondary' },
@@ -33,7 +35,11 @@ const Button: FC<ButtonProps> = ({
       disabled={disabled}
       onClick={canAct ? onClick : undefined}
     >
-      <Transition in={loading} timeout={200} unmountOnExit>
+      <Transition
+        in={loading}
+        timeout={{ appear: 200, enter: 200, exit: 100 }}
+        unmountOnExit
+      >
         {(state) => (
           <div
             className={classes(

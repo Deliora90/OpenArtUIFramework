@@ -1,25 +1,29 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import ButtonComponent from '../Button';
+import { Button as ButtonComponent } from '../';
 import { ButtonProps } from '../Button/button.types';
 
 export default {
   title: 'Open Art/General/Button',
   component: ButtonComponent,
+  parameters: { controls: { sort: 'requiredFirst' } },
   argTypes: {
     disabled: {
-      description: '23232',
-      options: [true, false],
-      control: { type: 'radio' },
+      defaultValue: false,
+      control: { type: 'boolean' },
     },
     loading: {
-      options: [true, false],
-      control: { type: 'radio' },
+      defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    isLarge: {
+      defaultValue: false,
+      control: { type: 'boolean' },
     },
     type: {
-      options: ['primary', 'secondary', 'subtle', 'text'],
-      control: { type: 'radio' },
+      defaultValue: null,
+      control: { type: 'select' },
     },
     style: {
       control: false,
@@ -29,6 +33,7 @@ export default {
     },
     onClick: {
       control: false,
+      action: 'clicked',
     },
   },
 } as Meta<ButtonProps>;
