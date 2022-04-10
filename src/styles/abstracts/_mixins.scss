@@ -23,6 +23,25 @@
   background-clip: text;
 }
 
-@mixin gradient-background {
-  background: linear-gradient(114.44deg, #0038f5 0%, #9f03ff 100%);
+@mixin hoverBorder {
+  &:after {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    background: $line;
+    border-radius: 10px;
+    z-index: -1;
+    transition: all 0.3s ease;
+  }
+  &:hover:after,
+  &:focus::after,
+  &:active:after {
+    transform: scale(1.07, 1.25);
+    opacity: 0.5;
+  }
 }

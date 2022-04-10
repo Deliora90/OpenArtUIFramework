@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Transition } from 'react-transition-group';
 
 import LoadingIcon from '../LoadingIcon/LoadingIcon';
-import { ButtonProps, ButtonEvents } from './button.types';
+import { ButtonProps } from './button.types';
 import { classes } from '../utils/classes';
 
 import './button.scss';
@@ -21,6 +21,7 @@ const Button: FC<ButtonProps> = ({
   const loadingType = type !== 'primary' ? 'gradient' : type;
   return (
     <button
+      data-testid="button"
       className={classes(
         'oa-button',
         { 'oa-button_large': isLarge },
@@ -42,6 +43,7 @@ const Button: FC<ButtonProps> = ({
       >
         {(state) => (
           <div
+            data-testid="loading"
             className={classes(
               'oa-button__loading',
               `oa-button__loading-${state}`

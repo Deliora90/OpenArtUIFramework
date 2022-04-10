@@ -1,0 +1,27 @@
+@import '@styles/abstracts/theme';
+@import '@styles/abstracts/variable';
+
+$themes: (
+  light: (
+    backgroundColor: $label,
+  ),
+  dark: (
+    backgroundColor: $placeholder,
+  ),
+);
+
+.oa-toggle {
+}
+
+.oa-toggle_on {
+}
+
+.oa-toggle__track {
+  background-color: $label;
+  @include themify($themes) {
+    background-color: themed('backgroundColor');
+  }
+}
+
+.oa-toggle__circle {
+}

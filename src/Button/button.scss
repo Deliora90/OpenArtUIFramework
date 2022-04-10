@@ -1,4 +1,5 @@
-@import '@styles/abstracts/_mixins.scss';
+@import '@styles/abstracts/mixins';
+@import '@styles/abstracts/variable';
 
 .oa-button {
   height: 40px;
@@ -12,9 +13,9 @@
 
   padding: 9px 30px 7px;
 
-  background: #ffffff;
+  background: $bg-default;
   border-radius: 8px;
-  border: 1px solid #888888;
+  border: 1px solid $placeholder;
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -29,7 +30,7 @@
   &:focus,
   &:active,
   &.oa-button_loading {
-    background: #f0f0f0;
+    background: $input-bg;
   }
   &:disabled:before {
     content: '';
@@ -43,7 +44,7 @@
     border-radius: 8px;
     margin: -1px;
     opacity: 0.5;
-    background: #fff;
+    background: $bg-default;
     z-index: 2;
   }
 }
@@ -60,7 +61,7 @@
 }
 
 .oa-button_loading {
-  background: #f0f0f0;
+  background: $input-bg;
   & > .oa-button__text {
     position: absolute;
 
@@ -70,74 +71,45 @@
 }
 
 .oa-button_primary {
-  @include gradient-background;
+  background: $accent-gradient;
   border: none;
 
-  &:after {
-    content: '';
-
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-
-    background: #dcdcdc;
-    border-radius: 10px;
-    z-index: -1;
-    transition: all 0.3s ease;
-  }
   & > .oa-button__text {
-    background: #ffffff;
-    -webkit-background-clip: text;
+    color: #fff;
+    -webkit-text-fill-color: #fff;
   }
+
+  @include hoverBorder;
+
   &:hover,
   &:focus,
   &:active,
   &.oa-button_loading {
-    @include gradient-background;
-  }
-  &:hover:after,
-  &:focus::after,
-  &:active:after {
-    transform: scale(1.07, 1.25);
-    opacity: 0.5;
+    background: $accent-gradient;
   }
 }
 
 .oa-button_secondary {
-  background: #ffffff;
-  background-clip: padding-box;
-  border: solid 1px transparent;
-
+  border: 1px solid transparent;
+  background: linear-gradient($bg-default, $bg-default) padding-box,
+    $accent-gradient border-box;
   & > .oa-button__text {
-    color: #ffffff;
+    color: $bg-default;
   }
-  &:after {
-    content: '';
 
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    margin: -1px;
-    border-radius: inherit;
-    z-index: -1;
-    @include gradient-background;
-  }
   &:hover,
   &:focus,
   &:active,
   &.oa-button_loading {
-    background-clip: padding-box;
+    border: 1px solid transparent;
+    background: linear-gradient($input-bg, $input-bg) padding-box,
+      $accent-gradient border-box;
   }
 }
 
 .oa-button_subtle {
-  background: #ffffff;
-  border: 1px solid #888888;
+  background: $bg-default;
+  border: 1px solid $placeholder;
 
   & > .oa-button__text {
     @include gradient-text;
@@ -152,7 +124,7 @@
   &:hover,
   &:focus,
   &:active {
-    background: #f8f8f8;
+    background: $bg;
   }
 }
 

@@ -1,23 +1,44 @@
-$primary-gradient: 'linear-gradient(114.44deg, #0038F5 0%, #9F03FF 100%)';
-// #F0F0F0
-// #333333 #333333
-// #888888 #888888
-// #002EF1
-// #F8F8F8 #F8F8F8
-// #FCFCFC #FCFCFC
-// #DCDCDC #DCDCDC
-// linear-gradient(108.08deg, #0000EB -2.53%, #004BFB 106.16%)
-// #FF6711
-// #EB3800
-// #FE3F61
-// #FD0025
-// #009846 #009846
-// #02971C
-// linear-gradient(108.08deg, #FF9C00 -2.53%, #FFDB03 123.11%);
-// #555555 #555555
+/// GrayScale
+$title-active: #222222;
+$body: #333333;
+$label: #555555;
+$placeholder: #888888;
+$line: #dcdcdc;
+$input-bg: #f0f0f0;
+$bg: #f8f8f8;
+$off-white: #fcfcfc;
+$bg-default: #ffffff;
 
-// #002EF1
+/// Primary
+$primary-default: #002ef1;
+$primary-dark: #0000ea;
+$primary-dark-mode: #005cff;
 
-// #0000EA
-// #D9DBE9
-// #222222
+/// Secondary
+$secondary-default: #ffb802;
+$secondary-dark: #ff9700;
+$secondary-dark-mode: #ffe604;
+
+/// Error
+$error-default: #fe3f61;
+$error-dark: #fd0025;
+$error-dark-mode: #ff7e86;
+
+/// Success
+$success-default: #009846;
+$success-dark: #02971c;
+$success-dark-mode: #36ea88;
+
+/// Warning
+$warning-default: #ff6711;
+$warning-dark: #eb3800;
+$warning-dark-mode: #ff9922;
+
+/// Gradient
+$primary-gradient: linear-gradient(108.08deg, #0000eb -2.53%, #004bfb 106.16%);
+$secondary-gradient: linear-gradient(
+  108.08deg,
+  #ff9c00 -2.53%,
+  #ffdb03 123.11%
+);
+$accent-gradient: linear-gradient(114.44deg, #0038f5 0%, #9f03ff 100%);

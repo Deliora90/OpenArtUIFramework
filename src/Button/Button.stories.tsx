@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import { Button as ButtonComponent } from '../';
-import { ButtonProps } from '../Button/button.types';
+import { Button as ButtonComponent } from '..';
+import { ButtonProps } from './button.types';
 
 export default {
   title: 'Open Art/General/Button',
