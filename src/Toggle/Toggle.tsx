@@ -20,7 +20,6 @@ const Toggle: FC<ToggleProps> = ({ checked, onChange }) => {
     <div className={classes('oa-toggle', { 'oa-toggle_on': isChecked })}>
       <button className="oa-toggle__track" onClick={handleChange}>
         <div className="oa-toggle__circle" />
-        Toogle
       </button>
     </div>
   );

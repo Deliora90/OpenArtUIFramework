@@ -23,7 +23,12 @@
   background-clip: text;
 }
 
-@mixin hoverBorder {
+@mixin hoverBorder(
+  $background,
+  $border-radius: 10px,
+  $xScale: 1.07,
+  $yScale: 1.25
+) {
   &:after {
     content: '';
 
@@ -34,14 +39,14 @@
     width: 100%;
 
     background: $line;
-    border-radius: 10px;
+    border-radius: $border-radius;
     z-index: -1;
     transition: all 0.3s ease;
   }
   &:hover:after,
   &:focus::after,
   &:active:after {
-    transform: scale(1.07, 1.25);
+    transform: scale($xScale, $yScale);
     opacity: 0.5;
   }
 }
