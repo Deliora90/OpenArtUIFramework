@@ -1,21 +1,12 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 
-import {
-  Toggle as ToggleComponent,
-  ThemeProvider as ThemeProviderComponent,
-  ThemeProviderProps,
-  ToggleProps,
-} from '../../';
+import { Toggle as ToggleComponent, ToggleProps } from '../../';
 
 export default {
   title: 'Open Art/General/Toggle',
-  component: ThemeProviderComponent,
-  subcomponents: { ToggleComponent },
+  component: ToggleComponent,
   argTypes: {
-    themeType: {
-      control: { type: 'select' },
-    },
     disabled: {
       defaultValue: false,
       control: { type: 'boolean' },
@@ -24,12 +15,8 @@ export default {
       control: { type: 'boolean' },
     },
   },
-} as Meta<ToggleProps & ThemeProviderProps>;
+} as Meta<ToggleProps>;
 
-export const Toggle = (props: ToggleProps & ThemeProviderProps) => {
-  return (
-    <ThemeProviderComponent themeType={props.themeType}>
-      <ToggleComponent {...props} />
-    </ThemeProviderComponent>
-  );
+export const Toggle = (props: ToggleProps) => {
+  return <ToggleComponent {...props} />;
 };
