@@ -1,10 +1,10 @@
-export { default as Button, ButtonType, ButtonProps } from './Button';
-export { default as Toggle, ToggleProps } from './Toggle';
+export { default as Button, ButtonType, ButtonProps } from '@components/Button';
+export { default as Toggle, ToggleProps } from '@components/Toggle';
 export {
   default as ThemeProvider,
   ThemeType,
   ThemeProviderProps,
-} from './ThemeProvider';
+} from '@components/ThemeProvider';
 
 import 'sanitize.css';
-import './styles/style.scss';
+import '@styles/style.scss';

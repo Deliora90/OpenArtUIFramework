@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { Transition } from 'react-transition-group';
 
-import LoadingIcon from '../LoadingIcon/LoadingIcon';
 import { ButtonProps } from './button.types';
-import { classes } from '../utils/classes';
+import LoadingIcon from '@components/LoadingIcon';
+import { classes } from '@utils/classes';
 
 import './button.scss';
 

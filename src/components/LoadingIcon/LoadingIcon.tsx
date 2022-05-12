@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { LoadingIconType } from './LoadingIcon.types';
-import { classes } from '../utils/classes';
+import { classes } from '@utils/classes';
 
 import './loadingIcon.scss';
 

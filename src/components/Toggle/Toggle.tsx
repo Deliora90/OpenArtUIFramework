@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 
 import { ToggleProps } from './toggle.types';
-import { classes } from '../utils/classes';
+import { classes } from '@utils/classes';
 
 import './toggle.scss';
 

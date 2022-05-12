@@ -4,9 +4,9 @@ import { Meta } from '@storybook/react';
 import {
   Toggle as ToggleComponent,
   ThemeProvider as ThemeProviderComponent,
-  ToggleProps,
   ThemeProviderProps,
-} from '..';
+  ToggleProps,
+} from '../../';
 
 export default {
   title: 'Open Art/General/Toggle',
