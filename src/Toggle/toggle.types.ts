@@ -1,5 +1,6 @@
 export type GeneralToggleProps = {
   checked?: boolean;
+  disabled?: boolean;
 };
 
 export type ToggleEvents = {

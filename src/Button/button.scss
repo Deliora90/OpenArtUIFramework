@@ -79,7 +79,7 @@
     -webkit-text-fill-color: #fff;
   }
 
-  @include hoverBorder;
+  @include hoverBorder(#dcdcdc);
 
   &:hover,
   &:focus,

@@ -14,11 +14,13 @@ export default {
   subcomponents: { ToggleComponent },
   argTypes: {
     themeType: {
-      defaultValue: null,
       control: { type: 'select' },
     },
-    checked: {
+    disabled: {
       defaultValue: false,
+      control: { type: 'boolean' },
+    },
+    checked: {
       control: { type: 'boolean' },
     },
   },

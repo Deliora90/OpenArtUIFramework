@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Button, { ButtonProps } from './';
+import Button, { ButtonProps } from '.';
 
 describe('Button testing', () => {
   let props: ButtonProps;

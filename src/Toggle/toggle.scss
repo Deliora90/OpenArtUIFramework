@@ -6,16 +6,33 @@ $themes: (
   light: (
     backgroundTrackColor: $placeholder,
     hoverBackgroundTrackColor: $label,
-    focusedTrackColor: $body,
+    focusedTrackColor: $placeholder,
+    focusedBorderTrackColor: $line,
   ),
   dark: (
     backgroundTrackColor: $label,
     hoverBackgroundTrackColor: $placeholder,
-    focusedTrackColor: $body,
+    focusedTrackColor: $placeholder,
+    focusedBorderTrackColor: $body,
   ),
 );
 
 .oa-toggle {
+  width: max-content;
+  &:hover {
+    & .oa-toggle__track:not([disabled]) {
+      background-color: $label;
+    }
+    & .oa-toggle__track:not([disabled]) .oa-toggle__circle {
+      border-color: $label;
+    }
+    &.oa-toggle_on .oa-toggle__track:not([disabled]) {
+      background: $primary-default;
+    }
+    &.oa-toggle_on .oa-toggle__track:not([disabled]) .oa-toggle__circle {
+      border-color: $primary-default;
+    }
+  }
 }
 
 .oa-toggle__track {
@@ -25,32 +42,28 @@ $themes: (
   display: flex;
   align-items: center;
 
+  background-color: $placeholder;
   border-radius: 40px;
   border: none;
-  background: $placeholder;
   outline: none;
+  cursor: pointer;
 
-  transition: left, opacity, background 0.5s;
+  transition: opacity, background 0.3s;
+  &:focus {
+    background-color: $placeholder;
+    @include hoverBorder($line, 40px, 1.3, 1.4);
+  }
   &::before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
+
     border-radius: 40px;
     background: $accent-gradient;
     opacity: 0;
   }
-  // @include hoverBorder($line, 40px, 1.3, 1.4);
-  @include themify($themes) {
-    background-color: themed('backgroundTrackColor');
-    $cooo: themed('focusedTrackColor');
-    @include hoverBorder($cooo, 40px, 1.3, 1.4);
-  }
-}
-
-.oa-toggle_on .oa-toggle__track::before {
-  opacity: 1;
 }
 
 .oa-toggle__circle {
@@ -63,12 +76,50 @@ $themes: (
   border-radius: 40px;
   border: 2px solid $placeholder;
 
-  transition: left, border-color 0.5s;
+  transition: all 0.3s;
+}
+
+.oa-toggle {
   @include themify($themes) {
-    border-color: themed('backgroundTrackColor');
+    &__circle {
+      border-color: themed('backgroundTrackColor');
+    }
+    &__track {
+      background-color: themed('backgroundTrackColor');
+    }
+    &__track:focus {
+      background-color: themed('focusedTrackColor');
+      @include hoverBorder(themed('focusedBorderTrackColor'), 40px, 1.3, 1.4);
+      & .oa-toggle__circle {
+        border-color: themed('focusedTrackColor');
+      }
+    }
+    &:hover {
+      & .oa-toggle__track:not([disabled]) {
+        background-color: themed('hoverBackgroundTrackColor');
+      }
+      & .oa-toggle__track:not([disabled]) .oa-toggle__circle {
+        border-color: themed('hoverBackgroundTrackColor');
+      }
+      &.oa-toggle_on .oa-toggle__track:not([disabled]) {
+        background: $primary-default;
+      }
+      &.oa-toggle_on .oa-toggle__track:not([disabled]) .oa-toggle__circle {
+        border-color: $primary-default;
+      }
+    }
   }
 }
 
+.oa-toggle_on .oa-toggle__track::before {
+  opacity: 1;
+}
+
+.oa-toggle__track:focus .oa-toggle__circle {
+  border-color: $placeholder;
+}
+
+.oa-toggle_on .oa-toggle__track:focus .oa-toggle__circle,
 .oa-toggle_on .oa-toggle__circle {
   left: 21px;
 
@@ -77,23 +128,6 @@ $themes: (
     $accent-gradient border-box;
 }
 
-.oa-toggle:hover {
-  & .oa-toggle__track {
-    background: $label;
-    @include themify($themes) {
-      background-color: themed('hoverBackgroundTrackColor');
-    }
-  }
-  &.oa-toggle_on .oa-toggle__track {
-    background: $primary-default;
-  }
-  & .oa-toggle__circle {
-    border-color: $label;
-    @include themify($themes) {
-      border-color: themed('hoverBackgroundTrackColor');
-    }
-  }
-  &.oa-toggle_on .oa-toggle__circle {
-    border-color: $primary-default;
-  }
+.oa-toggle__track:disabled {
+  opacity: 0.5;
 }
