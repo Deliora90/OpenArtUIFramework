@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Transition } from 'react-transition-group';
 
 import { ButtonProps } from './button.types';
@@ -7,7 +7,7 @@ import { classes } from '@utils/classes';
 
 import './button.scss';
 
-const Button: FC<ButtonProps> = ({
+const Button = ({
   children,
   className,
   disabled,
@@ -16,7 +16,7 @@ const Button: FC<ButtonProps> = ({
   style,
   type,
   onClick,
-}) => {
+}: PropsWithChildren<ButtonProps>) => {
   const canAct = !loading;
   const loadingType = type !== 'primary' ? 'gradient' : type;
   return (

@@ -12,7 +12,7 @@ describe('Toggle testing', () => {
   });
   const renderComponent = () => render(<Toggle {...props} />);
 
-  it('should has oa-toggle_on className when checked equals true', () => {
+  it('Should has oa-toggle_on className when checked equals true', () => {
     const { getByTestId } = renderComponent();
     const toggleComponent = getByTestId('toggle');
     const toggleButtonComponent = getByTestId('toggleButton');

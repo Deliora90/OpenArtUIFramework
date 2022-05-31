@@ -1,11 +1,15 @@
-import React, { FC } from 'react';
+import React, { PropsWithChildren } from 'react';
 import { ThemeProviderProps } from './themeProvider.types';
 
-const ThemeProvider: FC<ThemeProviderProps> = ({
+const ThemeProvider = ({
   themeType = 'light',
   children,
-}) => {
-  return <div className={`oa-theme_${themeType}`}>{children}</div>;
+}: PropsWithChildren<ThemeProviderProps>) => {
+  return (
+    <div data-testid="theme" className={`oa-theme_${themeType}`}>
+      {children}
+    </div>
+  );
 };
 
 export default ThemeProvider;

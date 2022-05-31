@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 
 import { LoadingIconType } from './LoadingIcon.types';
 import { classes } from '@utils/classes';

@@ -15,47 +15,47 @@ describe('Button testing', () => {
   });
   const renderComponent = () => render(<Button {...props}>Button</Button>);
 
-  it('should shows the children', () => {
+  it('Should shows the children', () => {
     const { getByText } = renderComponent();
     const buttonComponent = getByText('Button');
     expect(buttonComponent).toBeInTheDocument();
   });
 
-  it('should has oa-button_primary className with default props', () => {
+  it('Should has oa-button_primary className with default props', () => {
     const { getByTestId } = renderComponent();
     const buttonComponent = getByTestId('button');
     expect(buttonComponent).toHaveClass('oa-button_primary');
   });
 
-  it('should has oa-button_secondary className with secondaty type', () => {
+  it('Should has oa-button_secondary className with secondaty type', () => {
     props.type = 'secondary';
     const { getByTestId } = renderComponent();
     const buttonComponent = getByTestId('button');
     expect(buttonComponent).toHaveClass('oa-button_secondary');
   });
 
-  it('should has oa-button_subtle className with subtle type', () => {
+  it('Should has oa-button_subtle className with subtle type', () => {
     props.type = 'subtle';
     const { getByTestId } = renderComponent();
     const buttonComponent = getByTestId('button');
     expect(buttonComponent).toHaveClass('oa-button_subtle');
   });
 
-  it('should has oa-button_text className with text type', () => {
+  it('Should has oa-button_text className with text type', () => {
     props.type = 'text';
     const { getByTestId } = renderComponent();
     const buttonComponent = getByTestId('button');
     expect(buttonComponent).toHaveClass('oa-button_text');
   });
 
-  it('should has oa-button_large className when isLarge is true', () => {
+  it('Should has oa-button_large className when isLarge is true', () => {
     props.isLarge = true;
     const { getByTestId } = renderComponent();
     const buttonComponent = getByTestId('button');
     expect(buttonComponent).toHaveClass('oa-button_large');
   });
 
-  it('should has oa-button_loading className and has LoadingIcon component when loading is true', () => {
+  it('Should has oa-button_loading className and has LoadingIcon component when loading is true', () => {
     props.loading = true;
     const { getByTestId } = renderComponent();
     const buttonComponent = getByTestId('button');
