@@ -2,6 +2,7 @@
   "include": ["src"],
   "exclude": ["node_modules", "node_modules/**/*", "./src/stories"],
   "compilerOptions": {
+    "baseUrl": "./src",
     "declaration": true,
     "declarationDir": "dist",
     "module": "esnext",
@@ -13,10 +14,11 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "paths": {
-      "@components/*": ["./src/components/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@icons/*": ["./src/icons/*"]
+      "@/*": ["*"],
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"],
+      "@icons": ["icons"]
     }
   }
 }

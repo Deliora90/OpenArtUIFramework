@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.description {
+  position: relative;
+  display: flex;
+}
+.description__title {
+  z-index: 1;
+
+  margin: 0 15px;
+  padding: 0 5px;
+
+  background-color: #fff;
+}
+.description__line {
+  width: 100%;
+  height: 1px;
+
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 50%;
+
+  background-color: #dcdcdc;
+}

@@ -1,0 +1,95 @@
+@import '@styles/abstracts/theme';
+@import '@styles/abstracts/mixins';
+@import '@styles/abstracts/variable';
+
+$themes: (
+  light: (
+    descriptionColor: $label,
+  ),
+  dark: (
+    descriptionColor: $bg-default,
+  ),
+);
+
+.oa-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex: 1;
+}
+.oa-step__progress_bar {
+  width: 75%;
+  height: 1px;
+
+  position: absolute;
+  left: 38%;
+  top: 20px;
+  margin: 0 25%;
+
+  background: $line;
+}
+.oa-step:last-child .oa-step__progress_bar {
+  display: none;
+}
+.oa-step__wrapper {
+  cursor: pointer;
+}
+
+.oa-step__circle {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: $bg;
+  border-radius: 40px;
+}
+.oa-step__title {
+  margin: 0;
+  padding: 0;
+
+  @include font(14px, 700, 20px, normal, $title-active);
+}
+.oa-step__img {
+  width: 30px;
+  height: 30px;
+}
+.oa-step__description {
+  max-width: 40px;
+
+  margin: 0;
+  padding: 0;
+
+  @include font(13px, 500, 20px, normal, $label);
+  text-align: center;
+}
+
+.oa-step__description {
+  @include themify($themes) {
+    color: themed('descriptionColor');
+  }
+}
+
+.oa-step_completed {
+  & .oa-step__title {
+    color: $input-bg;
+  }
+  & .oa-step__circle,
+  & .oa-step__progress_bar {
+    background: $accent-gradient;
+  }
+}
+.oa-step_active {
+  & .oa-step__title {
+    color: $input-bg;
+  }
+  & .oa-step__progress_bar {
+    background: $line;
+  }
+  & .oa-step__circle {
+    background: $accent-gradient;
+  }
+}

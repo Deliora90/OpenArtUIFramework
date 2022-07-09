@@ -11,6 +11,7 @@ module.exports = {
   mode: 'production',
   resolve: {
     alias: {
+      '@': path.resolve(__dirname, 'src/'),
       '@components': path.resolve(__dirname, 'src/components/'),
       '@utils': path.resolve(__dirname, 'src/utils/'),
       '@styles': path.resolve(__dirname, 'src/styles/'),

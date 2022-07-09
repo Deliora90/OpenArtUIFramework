@@ -5,6 +5,11 @@ export {
   ThemeType,
   ThemeProviderProps,
 } from '@components/ThemeProvider';
+export {
+  default as Stepper,
+  StepProps,
+  StepperProps,
+} from '@components/Stepper';
 
 import 'sanitize.css';
 import '@styles/style.scss';
