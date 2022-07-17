@@ -1,29 +1,14 @@
-name: Deploy Storybook
+name: 'Storybook Deployment'
 
-on:
-  pull_request:
-  push:
-    branches:
-      - main
+on: push
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v1
+      - run: npm ci
+      - uses: chromaui/action@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Install
-        run: npm ci
-      - name: Build Storybook
-        run: npm run storybook
-      - name: Deploy Storybook
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./storybook-static
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
