@@ -38,5 +38,5 @@ export default {
 } as Meta<ButtonProps>;
 
 export const Button = (props: ButtonProps) => {
-  return <ButtonComponent {...props}>Button</ButtonComponent>;
+  return <ButtonComponent {...props}>Button </ButtonComponent>;
 };
